@@ -7,6 +7,8 @@
  * @version 0.6 - 5 Dec 2018
  * @author SkywalkerFR <@SkywalkerFR on twitter>
  *
+ * https://stackoverflow.com/questions/16698386/using-string-path-to-delete-element-from-array
+ * https://stackoverflow.com/questions/9628176/using-a-string-path-to-set-nested-array-data
  */
 
 
@@ -52,7 +54,7 @@ function db_exist($db_name) {
 /**
 * db_create funct.
 *
-* Create a databse
+* Create a database
 *
 * @param  string 	$db_name 	a database's name
 * @return boolean
@@ -84,7 +86,7 @@ function db_create($db_name) {
 /**
 * db_delete funct.
 *
-* Delete a databse
+* Delete a database
 *
 * @param  string 	$db_name 	a database's name
 * @return boolean
@@ -105,7 +107,7 @@ function db_delete($db_name) {
 /**
 * db_reset funct.
 *
-* Reset a databse (delete all content in the database)
+* Reset a database (delete all content in the database)
 *
 * @param  string 	$db_name 	a database's name
 * @return boolean
@@ -126,7 +128,7 @@ function db_reset($db_name) {
 /**
 * db_get_all funct.
 *
-* Get all databse's content in an array
+* Get all database's content in an array
 *
 * @param  string 	$db_name 	a database's name
 * @return array or boolean
@@ -145,7 +147,7 @@ function db_get_all($db_name) {
 /**
 * db_get_value funct.
 *
-* Query a value in a databse
+* Query a value in a database
 *
 * @param  string 	$db_name 	a database's name
 * @param  string 	$path 		path like /dir/dir2/test
@@ -219,7 +221,7 @@ function db_get_value($db_name, $path = NULL, $name) {
 /**
 * db_get_dir funct.
 *
-* Query a dir in a databse
+* Query a dir in a database
 *
 * @param  string 	$db_name 	a database's name
 * @param  string 	$path 		path like /dir/dir2/test
@@ -286,7 +288,7 @@ function db_get_dir($db_name, $path = NULL) {
 /**
 * db_add_value funct.
 *
-* Add a value in a databse
+* Add a value in a database
 *
 * @param  string 	$db_name 	a database's name
 * @param  string 	$path 		path like /dir/dir2/test
@@ -348,7 +350,7 @@ function db_add_value($db_name, $path = NULL, $name = NULL, $value = NULL) {
 /**
 * db_del_value funct.
 *
-* Delete a value in a databse
+* Delete a value in a database
 *
 * @param  string 	$db_name 	a database's name
 * @param  string 	$path 		path like /dir/dir2/test
@@ -412,7 +414,7 @@ function db_del_value($db_name, $path, $name){
 /**
 * db_add_dir funct.
 *
-* Add a dir in a databse
+* Add a dir in a database
 *
 * @param  string 	$db_name 	a database's name
 * @param  string 	$path 		path like /dir/dir2/test
@@ -460,7 +462,7 @@ function db_add_dir($db_name, $path) {
 /**
 * db_del_dir funct.
 *
-* Delete a dir in a databse
+* Delete a dir in a database
 *
 * @param  string 	$db_name 	a database's name
 * @param  string 	$path 		path like /dir/dir2/test
