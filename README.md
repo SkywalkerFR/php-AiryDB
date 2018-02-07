@@ -7,7 +7,7 @@ Just need to add the AiryDB.lib file with a require in you php script :
 ```php
 require('lib/AiryDB.lib');
 ```
-_(obviously you can change his extension to *.php if you want, it's for me to differentiate my scripts from the libraries to include.)_
+_(Obviously you can change his extension to *.php if you want, it's for me to differentiate my scripts from the libraries to include.)_
 
 # Functions list
 
