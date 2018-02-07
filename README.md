@@ -1,5 +1,6 @@
 # AiryDB
 It's a tiny lib made for PHP to deploy tiny and portable databases, without mysql server etc..
+It's look like the regedit hierarchical structure on Windows
 
 # How to use ?
 Just need to add the AiryDB.lib file with a require in you php script :
