@@ -1,4 +1,4 @@
-# php-AiryDB
+# AiryDB
 A tiny lib made for PHP to deploy tiny and portable databases, without mysql server etc..
 
 # How to use ?
@@ -26,4 +26,3 @@ db_add_dir($db_name, $path)                 | Add a dir in a databse
 db_del_dir($db_name, $path)                 | Delete a dir in a databse
 
 # Have fun !
-Tanks !
