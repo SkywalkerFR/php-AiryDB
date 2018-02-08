@@ -14,11 +14,11 @@ _(Obviously you can change his extension to *.php if you want, it's for me to di
 
 Funct                                       |Utility
 --------------------------------------------|------
-```db_exist($db_name)```                          | Return if a database exist
+```db_exist($db_name)```                          | Return if a database exists
 ```db_create($db_name)```                         | Create a database
 ```db_delete($db_name)```                         | Delete a database
 ```db_reset($db_name)```                          | Reset a database (delete all content in the database)
-```db_get_all($db_name)```                        | Get all databse's content in an array
+```db_get_all($db_name)```                        | Get all database's content in an array
 ```db_get_value($db_name, $path, $name)```        | Query a value in a database
 ```db_get_dir($db_name, $path)```                 | Query a dir in a database
 ```db_add_value($db_name, $path, $name, $value)```| Add a value in a database
@@ -26,4 +26,4 @@ Funct                                       |Utility
 ```db_add_dir($db_name, $path)```                 | Add a dir in a database
 ```db_del_dir($db_name, $path)```                | Delete a dir in a database
 
-__Have fun !__
+__Have fun!__
