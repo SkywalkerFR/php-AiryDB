@@ -34,7 +34,7 @@ function db_sysname($db_name) {
 /**
 * db_exist funct.
 *
-* Return if a database exist
+* Return if a database exists
 *
 * @param  string 	$db_name 	a database's name
 * @return boolean
