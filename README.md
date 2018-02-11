@@ -1,4 +1,5 @@
-# AiryDB
+# AiryDB  [![Releases](https://img.shields.io/github/release/SkywalkerFR/php-AiryDB/all.svg?style=flat-square)](https://github.com/SkywalkerFR/php-AiryDB/releases)
+
 It's a tiny lib made for PHP to deploy tiny and portable databases, without mysql server etc..
 It's look like the regedit hierarchical structure on Windows
 
@@ -24,6 +25,8 @@ Funct                                       |Utility
 ```db_add_value($db_name, $path, $name, $value)```| Add a value in a database
 ```db_del_value($db_name, $path, $name)```        | Delete a value in a database
 ```db_add_dir($db_name, $path)```                 | Add a dir in a database
-```db_del_dir($db_name, $path)```                | Delete a dir in a database
+```db_del_dir($db_name, $path)```                 | Delete a dir in a database
+```db_exist_value($db_name, $path)```             | Check if a value exist in a database
+```db_exist_dir($db_name, $path)```               | Check if a dir exist in a database
 
 __Have fun!__
