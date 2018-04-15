@@ -4,7 +4,7 @@
  *              ** AiryDB **
  *
  * @since 4 December, 2017
- * @version 1.14 - 14 April 2018
+ * @version 1.16 - 14 April 2018
  * @author SkywalkerFR <@SkywalkerFR on twitter>
  *
  * Thanks to this two posts
@@ -648,6 +648,49 @@ function db_del_dir($db_name, $path){
 
 	} else {
 		db_log("[db_del_dir] Database '".db_sysname($db_name)."' does not exist");
+		return(False);
+	}
+}
+
+
+
+
+/**
+* db_exist_value funct.
+*
+* Check if a value exist in a database
+*
+* @param  string 	$db_name 	a database's name
+* @param  string 	$path 		path like /dir/dir2/test
+* @param  string 	$name 		name associated to the value
+* @return string or boolean
+*
+*/
+function db_exist_value($db_name, $path, $name) {
+	if (db_get_value($db_name, $path)) {
+		return(True);
+	} else {
+		return(False);
+	}
+}
+
+
+
+
+/**
+* db_exist_dir funct.
+*
+* Check if a dir exist in a database
+*
+* @param  string 	$db_name 	a database's name
+* @param  string 	$path 		path like /dir/dir2/test
+* @return array or boolean
+*
+*/
+function db_exist_dir($db_name, $path) {
+	if (db_get_dir($db_name, $path)) {
+		return(True);
+	} else {
 		return(False);
 	}
 }
