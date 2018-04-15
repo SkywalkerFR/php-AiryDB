@@ -74,7 +74,7 @@ function db_sys_write($db_name, $array) {
 
 	while (file_exists($airydb_dir_db.'/'.$db_name.'.lock')) {
 
-		if (round(microtime(true), 0) - fileatime($airydb_dir_db.'/'.$db_name.'.lock') > 1) unlink($airydb_dir_db.'/'.$db_name.'.lock');
+		if (round(microtime(true), 0) - fileatime($airydb_dir_db.'/'.$db_name.'.lock') > 2) unlink($airydb_dir_db.'/'.$db_name.'.lock');
 		sleep(0.01);
 		file_put_contents($airydb_dir_log.'/airydb_wait.log', date("[d/m/Y H:i:s]").' - [WAIT WRITE] - '.$db_name.PHP_EOL, FILE_APPEND | LOCK_EX);
 	}
@@ -277,6 +277,7 @@ function db_get_value($db_name, $path = NULL, $name) {
 					$path = substr($path, 1);
 				}
 
+				$pathstr = $path;
 				$path .= '/'.$name;
 				$path = explode("/", $path);
 				$sub_array = '';
@@ -286,14 +287,14 @@ function db_get_value($db_name, $path = NULL, $name) {
 						if (isset($db_contenu[$dir])) {
 							$sub_array = $db_contenu[$dir];
 						} else {
-							db_log("[db_get_value] Can't find (0x01) path:'".$path."' name:'".$name."' in '".db_sysname($db_name)."'");
+							db_log("[db_get_value] Can't find (0x01) path: '".$pathstr."' name: '".$name."' in '".db_sysname($db_name)."'");
 							return(False);
 						}
 					} else {
 						if (isset($sub_array[$dir])) {
 							$sub_array = $sub_array[$dir];
 						} else {
-							db_log("[db_get_value] Can't find (0x02) path:'".$path."' name:'".$name."' in '".db_sysname($db_name)."'");
+							db_log("[db_get_value] Can't find (0x02) path: '".$pathstr."' name: '".$name."' in '".db_sysname($db_name)."'");
 							return(False);
 						}
 					}
@@ -350,6 +351,7 @@ function db_get_dir($db_name, $path = NULL) {
 					$path = substr($path, 1);
 				}
 
+				$pathstr = $path;
 				$path = explode("/", $path);
 				$sub_array = '';
 				foreach ($path as $dir) {
@@ -358,14 +360,14 @@ function db_get_dir($db_name, $path = NULL) {
 						if (isset($db_contenu[$dir])) {
 							$sub_array = $db_contenu[$dir];
 						} else {
-							db_log("[db_get_dir] Can't find (0x01) path:'".$path."' in '".db_sysname($db_name)."'");
+							db_log("[db_get_dir] Can't find (0x01) path: '".$pathstr."' in '".db_sysname($db_name)."'");
 							return(False);
 						}
 					} else {
 						if (isset($sub_array[$dir])) {
 							$sub_array = $sub_array[$dir];
 						} else {
-							db_log("[db_get_dir] Can't find (0x02) path:'".$path."' in '".db_sysname($db_name)."'");
+							db_log("[db_get_dir] Can't find (0x02) path: '".$pathstr."' in '".db_sysname($db_name)."'");
 							return(False);
 						}
 					}
@@ -486,6 +488,7 @@ function db_del_value($db_name, $path, $name){
 			}
 
 			$path .= '/'.$name;
+			$pathstr = $path;
 			$path = explode("/", $path);
 			$db_genprev = NULL;
 			$db_gen = &$db_contenu;
@@ -494,7 +497,7 @@ function db_del_value($db_name, $path, $name){
 				$db_genprev = &$db_gen;
 				
 				if (!isset($db_genprev[$dir])) {
-					db_log("[db_del_value] Can't find path:'".$path."' in '".db_sysname($db_name)."'");
+					db_log("[db_del_value] Can't find path: '".$pathstr."' in '".db_sysname($db_name)."'");
 					return(False);
 				}
 
@@ -607,20 +610,24 @@ function db_del_dir($db_name, $path){
 				$path = substr($path, 1);
 			}
 
+			$pathstr = $path;
 			$path = explode("/", $path);
 			$db_genprev = NULL;
 			$db_gen = &$db_contenu;
 
 			foreach ($path as &$dir){
 				$db_genprev = &$db_gen;
-				
-				if (!isset($db_genprev[$dir])) {
-					db_log("[db_del_dir] Can't find path:'".$path."' in '".db_sysname($db_name)."'");
+
+				if (!isset($db_genprev[$dir]) && array_key_exists($dir, $db_genprev) == False) {
+					/* array_key_exists to check if it's not an empty dir, tnks Ozachi ^^ */
+					db_log("[db_del_dir] Can't find path: '".$pathstr."' in '".db_sysname($db_name)."'");
 					return(False);
-				}elseif (!is_array($db_genprev[$dir])) {
+
+				}elseif (!is_array($db_genprev[$dir]) && $db_genprev[$dir] !== NULL) {
 					db_log("[db_del_dir] Path exist but the result is a value, not a dir, in '".db_sysname($db_name)."'");
 					return(False);
 				}
+
 				$db_gen = &$db_gen[$dir];
 			}
 
