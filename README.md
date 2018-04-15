@@ -31,10 +31,8 @@ Funct                                       |Utility
 
 # Features
 Databases are compressed by zLib,
-
-Collision avoidance system when writing/reading data,
-
-In case of error, a log file is generated, by default in the file 'db/airydb.log',
+collision avoidance system when writing/reading data,
+and in case of error, a log file is generated, by default in the file 'db/airydb.log'.
 
 
 __Have fun!__
