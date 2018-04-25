@@ -52,7 +52,7 @@ function db_sysname($db_name) {
 function db_log($log) {
 	global $airydb_dir_log, $airydb_write_log;
 	if ($airydb_write_log == True) {
-		file_put_contents($airydb_dir_log.'/airydb.log', date("[d/m/Y H:i:s]").' - '.$log.PHP_EOL, FILE_APPEND | LOCK_EX);
+		file_put_contents($airydb_dir_log.'/airydb.log', date("[d/m/Y H:i:s]").'- [line '.debug_backtrace()['1']['line'].' in '.debug_backtrace()['1']['file'].'] - '.$log.PHP_EOL, FILE_APPEND | LOCK_EX);
 	}
 }
 
