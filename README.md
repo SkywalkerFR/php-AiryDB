@@ -7,9 +7,9 @@ It's look like the regedit hierarchical structure on Windows
 Just need to add the airydb.lib file with a require in you php script :
 
 ```php
-require('lib/airydb.lib');
+require('lib/airydb.php');
 ```
-_(Obviously you can change his extension to *.php if you want, it's for me to differentiate my scripts from the libraries to include.)_
+_(Obviously you can change his location, it's for me to differentiate my scripts from the libraries to include.)_
 
 # Functions list
 
@@ -28,6 +28,11 @@ Funct                                       |Utility
 ```db_del_dir($db_name, $path)```                 | Delete a dir in a database
 ```db_exist_value($db_name, $path)```             | Check if a value exist in a database
 ```db_exist_dir($db_name, $path)```               | Check if a dir exist in a database
+
+If you want to disable logs, type this under the require() line :
+```php
+$airydb_write_log = False;
+```
 
 # Features
 Databases are compressed by zLib,
