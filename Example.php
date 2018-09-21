@@ -1,10 +1,10 @@
 <?php
 
-require('lib/airydb.lib');
+require('lib/airydb.php');
 
 /**
  * Have fun !! 
- */ 
+*/ 
 
 
 /** 
