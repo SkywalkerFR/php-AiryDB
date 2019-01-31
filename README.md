@@ -1,4 +1,4 @@
-# AiryDB  [![Releases](https://img.shields.io/github/release/SkywalkerFR/php-AiryDB/all.svg?style=flat-square&logo=php&colorB=97ca00&logoColor=ffffff))](https://github.com/SkywalkerFR/php-AiryDB/releases)
+# AiryDB  [![Releases](https://img.shields.io/github/release/SkywalkerFR/php-AiryDB/all.svg?style=flat-square&logo=php&colorB=97ca00&logoColor=ffffff)](https://github.com/SkywalkerFR/php-AiryDB/releases)
 
 It's a tiny lib made for PHP to deploy tiny and portable databases, without mysql server etc..
 It's look like the regedit hierarchical structure on Windows
