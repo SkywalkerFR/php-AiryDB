@@ -4,17 +4,17 @@ It's a tiny lib made for PHP to deploy tiny and portable databases, without mysq
 It's look like the regedit hierarchical structure on Windows
 
 # How to use ?
-Just need to add the airydb.lib file with a require in you php script :
+Just need to add the airydb.php file with a require in your script :
 
 ```php
-require('lib/airydb.php');
+require_once('lib/airydb.php');
 ```
-_(Obviously you can change his location, it's for me to differentiate my scripts from the libraries to include.)_
+_(Obviously you can change his location)_
 
 # Functions list
 
-Funct                                       |Utility
---------------------------------------------|------
+Funct                                             |Utility
+--------------------------------------------------|------
 ```db_exist($db_name)```                          | Return if a database exists
 ```db_create($db_name)```                         | Create a database
 ```db_delete($db_name)```                         | Delete a database
