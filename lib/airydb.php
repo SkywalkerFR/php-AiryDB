@@ -5,7 +5,7 @@
  *
  * @since 4 December, 2017
  * @version 1.17 - 21 September 2018
- * @author SkywalkerFR <@SkywalkerFR on twitter>
+ * @author @SkyEmie_
  *
  * Thanks to this two posts
  * https://stackoverflow.com/questions/16698386/using-string-path-to-delete-element-from-array
